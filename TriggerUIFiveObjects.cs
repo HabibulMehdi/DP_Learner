@@ -5,8 +5,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-// For 8 objects 
-public class TriggerUIShow : MonoBehaviour
+// For 5 objects //  
+public class TriggerUIFiveObjects : MonoBehaviour
 {
     public GameObject uiobject;
     public GameObject off;
@@ -20,7 +20,7 @@ public class TriggerUIShow : MonoBehaviour
     {
         uiobject.SetActive(false);
         remainingObjects = triggers.Length;
-        objectsText.text = "Remaining Objects: " +count + "/" + remainingObjects;
+        objectsText.text = "Remaining Objects: " + count + "/" + remainingObjects;
     }
     void OnTriggerEnter(Collider Player)
     {
@@ -37,16 +37,16 @@ public class TriggerUIShow : MonoBehaviour
 
     public void check_End()
     {
-        
-        for(int i =0; i < 8; i++)
+
+        for (int i = 0; i < 5; i++)
         {
-            if(!triggers[i].activeSelf)
+            if (!triggers[i].activeSelf)
             {
                 count++;
                 objectsText.text = "Remaining Objects: " + count + "/" + remainingObjects;
             }
 
-            if(count == 8)
+            if (count == 5)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }

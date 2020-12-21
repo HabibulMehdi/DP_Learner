@@ -4,17 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-// for 4-minutes
-public class CountdownTimer : MonoBehaviour
+// for 6-minutes
+public class TimerSix : MonoBehaviour
 {
     string currentTime;
     float seconds = 0f;
-    float minutes = 4f;
+    float minutes = 6f;
     float count = 0f;
 
-   // public GameObject TimeoverPanel;
+    // public GameObject TimeoverPanel;
     [SerializeField] Text countdownText;
-     void Start()
+    void Start()
     {
         count = minutes * 60;
         minutes--;
@@ -22,7 +22,7 @@ public class CountdownTimer : MonoBehaviour
         seconds = 60;
     }
 
-     void Update()
+    void Update()
     {
         if (count > 0)
         {
@@ -38,7 +38,7 @@ public class CountdownTimer : MonoBehaviour
                 seconds = 60;
                 minutes -= 1;
             }
-            currentTime = "0"+minutes.ToString() + ":" + s.ToString();
+            currentTime = "0" + minutes.ToString() + ":" + s.ToString();
             countdownText.text = currentTime;
         }
         if (count <= 0)
@@ -49,3 +49,4 @@ public class CountdownTimer : MonoBehaviour
         }
     }
 }
+
